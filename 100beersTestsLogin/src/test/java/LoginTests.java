@@ -77,7 +77,7 @@ public class LoginTests {
         emailForgottenPassword.click();
 
         WebElement forgottenEmail = driver.findElement(By.name("email"));
-        forgottenEmail.sendKeys("rjcrash@abv.bg");
+        forgottenEmail.sendKeys("rjcrash01@abv.bg");
 
         WebElement continueButton = driver.findElement(By.xpath("//input[@value='Продължи']"));
         continueButton.click();
@@ -85,10 +85,10 @@ public class LoginTests {
         driver.get("http://www.abv.bg/");
 
         WebElement mailName  = driver.findElement(By.name("username"));
-        mailName.sendKeys("rjcrash@abv.bg");
+        mailName.sendKeys("rjcrash01@abv.bg");
 
         WebElement mailPassword  = driver.findElement(By.name("password"));
-        mailPassword.sendKeys("");
+        mailPassword.sendKeys("rjcrash01rjcrash01");
 
         WebElement mailLoginButton  = driver.findElement(By.name("loginBut"));
         mailLoginButton.click();
@@ -109,7 +109,7 @@ public class LoginTests {
 
         driver.get("http://100beers.bg/index.php?route=account/login");
         WebElement email = driver.findElement(By.name("email"));
-        email.sendKeys("rjcrash@abv.bg");
+        email.sendKeys("rjcrash01@abv.bg");
 
         WebElement password = driver.findElement(By.name("password"));
         password.sendKeys(pass);
@@ -119,11 +119,11 @@ public class LoginTests {
 
         String userName = driver.findElement(By.xpath("//*[@id='header']/div[1]/div/a[1]")).getText();
 
-        Assert.assertEquals("rj", userName);
+        Assert.assertEquals("Rj", userName);
     }
 
     @After
     public void tearDown (){
-        //driver.close();
+        driver.close();
     }
 }
